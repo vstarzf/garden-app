@@ -8,7 +8,23 @@
 // 
 
 // function for API call ( we only get like 150 API calls per month so...)
+function hardiness_API(zipcode) {
+    const settings = {
+        async: true,
+        crossDomain: true,
+        url: 'https://plant-hardiness-zone.p.rapidapi.com/zipcodes/' + zipcode,
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'd262012509msh6d5bfe72fcb79b5p10eb1ajsn1c181bfc5f55',
+            'X-RapidAPI-Host': 'plant-hardiness-zone.p.rapidapi.com'
+        }
+    };
 
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+
+}
 
 
 

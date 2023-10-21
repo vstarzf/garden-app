@@ -62,8 +62,33 @@
                         View recommended fruits and vegetables for your garden based on your location's hardiness zone
                         and personal gardening preferences,
                     </p>
+                    <!-- figure out how to get the input text from this box -->
+                    <p>Your location</p>
                     <input type="text" value="Your zip code">
 
+                    <!-- API call to get zone from input input zip -->
+                    <!-- is there a way to run this in the javascript file so
+                         that we can do all the backend sql stuff there  -->
+                    <script>
+                        console.log('running script')
+                        const url = 'https://plant-hardiness-zone.p.rapidapi.com/zipcodes/90210';
+                        const options = {
+                            method: 'GET',
+                            headers: {
+                                'X-RapidAPI-Key': 'd262012509msh6d5bfe72fcb79b5p10eb1ajsn1c181bfc5f55',
+                                'X-RapidAPI-Host': 'plant-hardiness-zone.p.rapidapi.com'
+                            }
+                        };
+
+                        try {
+                            const response = await fetch(url, options);
+                            const result = await response.text();
+                            console.log(result);
+                        } catch (error) {
+                            console.error(error);
+                        }
+                    </script>
+                    <p>Crop Type</p>
                     <div>
                         <label class="radio">
                             <input name="radio" type="radio" checked />
@@ -74,6 +99,7 @@
                             <span>Fruits</span>
                         </label>
                     </div>
+                    <a class="btn btn-primary" href="#about">Submit</a>
                 </div>
             </div>
             <!-- <img class="img-fluid" src="assets/img/plant.jpg" alt="..." /> -->
