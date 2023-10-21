@@ -7,6 +7,12 @@
 // Scripts
 // 
 
+// function for API call ( we only get like 150 API calls per month so...)
+
+
+
+
+
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
